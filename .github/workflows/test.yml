@@ -1,0 +1,10 @@
+name: Test Bootstrap Workflow
+on: [push]
+jobs:
+  check-bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: List files
+        run: ls -l

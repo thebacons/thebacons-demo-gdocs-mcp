@@ -1,0 +1,26 @@
+name: Bootstrap Repo Variables
+on:
+  push:
+    branches: [main]   # first push after repo creation is enough
+permissions:
+  # we only need actions:write to set variables
+  actions: write
+jobs:
+  add-var:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set REPO_NAME variable to “owner/repo”
+        env:
+          GH_TOKEN: ${{ secrets.ORG_PAT_WITH_ACTIONS_WRITE }}
+        run: |
+          repo_full="${{ github.repository }}"           # e.g. thebacons/<your new repository>
+          var_name="REPO_NAME"
+          echo "Setting $var_name=$repo_full"
+
+          # GitHub REST API to create/update repository variable
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            "repos/$repo_full/actions/variables/$var_name" \
+            -f name="$var_name" \
+            -f value="$repo_full"
