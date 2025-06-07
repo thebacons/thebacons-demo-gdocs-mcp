@@ -13,7 +13,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ORG_PAT_WITH_ACTIONS_WRITE }}
         run: |
-          repo_full="${{ github.repository }}"           # e.g. thebacons/BlogMindAI
+          repo_full="${{ github.repository }}"           # e.g. thebacons/<your new repository>
           var_name="REPO_NAME"
           echo "Setting $var_name=$repo_full"
 
