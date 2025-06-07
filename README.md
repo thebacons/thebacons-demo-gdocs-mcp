@@ -1,3 +1,4 @@
+ 
 # 🧠 BACON Codex MCP Bootstrap
 
 This repository provides a standardized **GitHub + OpenAI Codex environment** to kickstart new AI-powered projects using the MCP (Model Context Protocol) pattern.
@@ -34,7 +35,7 @@ In your [Codex environment setup](https://chatgpt.com/codex/settings/environment
 
 > 💡 These variables allow one single Codex environment to bootstrap _any_ repo without rebuilding new containers.
 
----
+ 
 
 ## 🧪 How to Use This Repo as a Template
 
@@ -49,7 +50,7 @@ In your [Codex environment setup](https://chatgpt.com/codex/settings/environment
 
 4. Codex will auto-clone the repo, authenticate GitHub, and scaffold any missing structure
 
----
+
 
 ## 📁 Folder Structure
 
@@ -63,3 +64,28 @@ In your [Codex environment setup](https://chatgpt.com/codex/settings/environment
 ├── .github/workflows/
 │   └── validate-repo.yml    # CI lint to check structure/health
 ├── README.md                # You’re reading it
+``` 
+
+## 🛠️ Script Notes
+
+The Codex environment runs `bootstrap.sh` on startup.
+You can find this in your Codex environment settings under **Startup script**.
+
+If needed, revert to your original stable script after initial scaffolding:
+
+```bash
+#!/usr/bin/env bash
+# See setup_script.sh for full Codex-compatible implementation
+```
+
+---
+
+## 📄 License
+
+MIT License – use freely, fork, modify, go wild 🍳
+EOF
+
+```
+
+Let me know if you'd like me to bundle this into a script that updates the README and commits it for you automatically.
+```
