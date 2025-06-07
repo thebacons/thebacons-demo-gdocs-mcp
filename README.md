@@ -87,5 +87,4 @@ EOF
 
 ```
 
-Let me know if you'd like me to bundle this into a script that updates the README and commits it for you automatically.
-```
+
